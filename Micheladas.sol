@@ -1,8 +1,7 @@
 pragma solidity ^0.8.4;
-import "./BEP20.sol";
 import "./Morralla.sol";
 
-contract Micheladas is BEP20('Michelada', 'MICHELADA') {
+contract Micheladas is ERC20('Michelada', 'MICHELADA'), Ownable {
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (El Tianguis).
     function mint(address _to, uint256 _amount) public onlyOwner {
         _mint(_to, _amount);
